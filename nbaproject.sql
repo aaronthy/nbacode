@@ -74,7 +74,7 @@ group by player
 select *
 from #selectedplayerawardstable
 
--- remove duplicate as traded player have duplicated data if traded
+-- remove duplicate as player have duplicated data if traded
 with rownumcte as (
 select *, 
 	row_number () over (partition by  player_id, player, experience order by player_id) row_num
